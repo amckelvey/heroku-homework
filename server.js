@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require('fs');
 const path = require('path');
 
 const PORT = process.env.PORT || 3001;
@@ -38,7 +39,7 @@ app.post('/api/notes', (req, res) => {
     readAndAppend(newNote, '/db/db.json');
     res.json('Note added successfully');
   } else {
-    res.error('Error in adding tip');
+    res.error('Error in adding note');
   }
 });
 
