@@ -1,13 +1,30 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const util = require('util');
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
+
+const readFromFile = util.promisify(fs.readFile);
+
+const readAndAppend = (content, file) => {
+  fs.readFile(file, 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+    } else {
+      const parsedData = JSON.parse(data);
+      parsedData.push(content);
+      writeToFile(file, parsedData);
+    }
+  });
+};
 
 // GET route for homepage
 app.get('/', (req, res) =>
@@ -21,7 +38,7 @@ app.get('/notes', (req, res) =>
 
 app.get('/api/notes', (req, res) => {
   console.info(`${req.method} request received for tips`);
-  readFromFile("/db/db.json").then((data) => res.json(JSON.parse(data)));
+  readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
 
