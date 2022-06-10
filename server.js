@@ -67,6 +67,20 @@ app.post('/api/notes', (req, res) => {
   }
 });
 
+app.delete('/api/notes/:id', (req, res) => {
+  const idValue = req.params.id;
+  fs.readFile(path.join(__dirname, './db/db.json'), "utf8", (err, note) => {
+    if (err) throw err;
+    let dbNotes = JSON.parse(note);
+    const newDbNotes = dbNotes.filter((note) => note.id !== idValue);
+    res.send(newDbNotes);
+
+    fs.writeFile(path.join(__dirname, './db/db.json'), JSON.stringify(newDbNotes, null, 2), (err) => {
+      if (err) throw err;
+    })
+  });
+});
+
 // Wildcard route that points to homepage
 app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/index.html'))

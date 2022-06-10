@@ -1,12 +1,12 @@
 [
-    {
-        "title": "Test Title",
-        "text": "Test text",
-        "id": "12345"
-    },
-    {
-        "title": "NEW NOTE",
-        "text": "NEW TEXT",
-        "id": "aa6d67db-6c43-447a-8e12-f98bbc3e01dc"
-    }
+  {
+    "title": "Test Title",
+    "text": "Test text",
+    "id": "12345"
+  },
+  {
+    "title": "test",
+    "text": "tet",
+    "id": "cfdd7f6a-cf8f-41c9-ab9a-2e6f73fa07d0"
+  }
 ]
