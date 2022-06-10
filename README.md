@@ -20,5 +20,13 @@ The app then uses the fs package of node to read, write, and delete notes to/fro
 
 [heroku](https://pure-cove-66933.herokuapp.com/)
 
-[github pages](https://amckelvey.github.io/heroku-homework/)
+#### How to run locally:
+
+```
+open terminal in heroku-homework root directory
+Command: 'npm i' to install dependencies
+Command: 'node server' to have the server run on localhost:3001
+```
+
+
 
