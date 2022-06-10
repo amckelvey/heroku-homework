@@ -1,15 +1,12 @@
 [
     {
         "title": "Test Title",
-        "text": "Test text"
+        "text": "Test text",
+        "id": "12345"
     },
     {
-        "note_id": "56f732ea-fbfc-4f29-880a-9132c6379fed"
-    },
-    {
-        "note_id": "4f172168-1e3c-4398-8c67-6a83caa23917"
-    },
-    {},
-    {},
-    {}
+        "title": "NEW NOTE",
+        "text": "NEW TEXT",
+        "id": "aa6d67db-6c43-447a-8e12-f98bbc3e01dc"
+    }
 ]

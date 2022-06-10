@@ -47,17 +47,18 @@ app.get('/api/notes', (req, res) => {
   readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
-
 app.post('/api/notes', (req, res) => {
   console.info(`${req.method} request received to add a note`);
 
-  const { title, text } = req.body;
+  const { title, text, id } = req.body;
 
   if (req.body) {
     const newNote = {
       title,
-      text
+      text,
+      id: randomUUID()
     };
+    console.log(newNote);
 
     readAndAppend(newNote, './db/db.json');
     res.json('Note added successfully');
