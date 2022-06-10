@@ -5,6 +5,7 @@
 ```
 The purpose of this app is test our knowledge of using express.js and heroku deployments.
 ```
+![Screenshot](./public/assets/images/11-express-homework-demo-02.png)
 
 #### How it works:
 
